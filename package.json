@@ -1,7 +1,7 @@
 {
 	"name": "hello-hono",
 	"scripts": {
-		"dev": "bun run --hot src/index.ts",
+		"dev": "bun run --hot src/index.tsx",
 		"lint": "bunx biome check --write src",
 		"lint:watch": "bunx nodemon --watch \"src\" --ext \"ts,tsx\" --exec \"bunx biome check --write src\""
 	},
