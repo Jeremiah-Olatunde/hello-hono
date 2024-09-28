@@ -1,6 +1,8 @@
 import { Hono } from "hono";
 import { Poem } from "./Poem";
 
+import { serveStatic } from "hono/bun";
+
 const app = new Hono();
 
 app.get("/", async (context) => {
@@ -21,7 +23,9 @@ app.get("/user/:id{\\d+}", (context) => {
 });
 
 app.get("/poem", (context) => {
-	return context.html(<Poem></Poem>);
+	return context.html(<Poem />);
 });
+
+app.get("/static/*", serveStatic({ root: "./src" }));
 
 export default app;
