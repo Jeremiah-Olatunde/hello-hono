@@ -3,7 +3,8 @@
 	"scripts": {
 		"dev": "bun run --hot src/index.tsx",
 		"lint": "bunx biome check --write src",
-		"lint:watch": "bunx nodemon --watch \"src\" --ext \"ts,tsx\" --exec \"bunx biome check --write src\""
+		"lint:watch": "bunx nodemon --watch \"src\" --ext \"ts,tsx\" --exec \"bunx biome check --write src\"",
+		"tailwind:watch": "bunx tailwindcss --input ./src/index.css --output ./src/static/output.css --watch"
 	},
 	"dependencies": {
 		"hono": "^4.6.3",
