@@ -1,7 +1,10 @@
 import { Hono } from "hono";
-import { Poem } from "./Poem";
-
 import { serveStatic } from "hono/bun";
+import { jsxRenderer } from "hono/jsx-renderer";
+
+import { Home } from "./Home";
+import { LayoutBase } from "./LayoutBase";
+import { Poem } from "./Poem";
 
 const app = new Hono();
 
@@ -27,5 +30,8 @@ app.get("/poem", (context) => {
 });
 
 app.get("/static/*", serveStatic({ root: "./src" }));
+
+app.get("/page/*", jsxRenderer(LayoutBase));
+app.get("/page/home", (context) => context.render(<Home />));
 
 export default app;
