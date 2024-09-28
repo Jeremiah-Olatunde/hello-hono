@@ -6,7 +6,8 @@
 		"lint:watch": "bunx nodemon --watch \"src\" --ext \"ts,tsx\" --exec \"bunx biome check --write src\""
 	},
 	"dependencies": {
-		"hono": "^4.6.3"
+		"hono": "^4.6.3",
+		"tailwindcss": "^3.4.13"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.9.2",
