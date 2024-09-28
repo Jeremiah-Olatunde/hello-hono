@@ -2,7 +2,8 @@
 	"name": "hello-hono",
 	"scripts": {
 		"dev": "bun run --hot src/index.ts",
-		"lint": "bunx biome check --write src"
+		"lint": "bunx biome check --write src",
+		"lint:watch": "bunx nodemon --watch \"src\" --ext \"ts,tsx\" --exec \"bunx biome check --write src\""
 	},
 	"dependencies": {
 		"hono": "^4.6.3"
